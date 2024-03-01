@@ -123,7 +123,7 @@ spoilers_open = '[spoiler'i 's'i? ']';
 spoilers_close = '[/spoiler'i 's'i? ']';
 
 color_open = '[color='i ([a-z]+|'#'i[0-9a-fA-F]{3,6}) >mark_a1 %mark_a2 ']';
-color_typed = '[color='i ('art'i('ist'i)?|'char'i('acter'i)?|'copy'i('right'i)?|'spec'i('ies'i)?|'inv'i('alid'i)?|'meta'i|'lore'i) >mark_a1 %mark_a2 ']';
+color_typed = '[color='i ('art'i('ist'i)?|'char'i('acter'i)?|'copy'i('right'i)?|'spec'i('ies'i)?|'inv'i('alid'i)?|'meta'i|'lore'i|'cl'i('ass'i)?) >mark_a1 %mark_a2 ']';
 color_close = '[/color]'i;
 
 id = digit+ >mark_a1 %mark_a2;
