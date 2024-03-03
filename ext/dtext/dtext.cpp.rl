@@ -182,6 +182,8 @@ basic_inline := |*
   '[/sup]'i => { dstack_close_inline(INLINE_SUP, "</sup>"); };
   '[sub]'i  => { dstack_open_inline(INLINE_SUB, "<sub>"); };
   '[/sub]'i => { dstack_close_inline(INLINE_SUB, "</sub>"); };
+  '[void]'i    => { dstack_open_inline(INLINE_VOID, "<span class=\"user-owner with-stuyle\">"); };
+  '[/void]'i   => { dstack_close_inline(INLINE_VOID, "</span>"); };
   any => { append_html_escaped(fc); };
 *|;
 
@@ -309,6 +311,8 @@ inline := |*
   '[/sup]'i => { dstack_close_inline(INLINE_SUP, "</sup>"); };
   '[sub]'i  => { dstack_open_inline(INLINE_SUB, "<sub>"); };
   '[/sub]'i => { dstack_close_inline(INLINE_SUB, "</sub>"); };
+  '[void]'i    => { dstack_open_inline(INLINE_VOID, "<span class=\"user-owner with-stuyle\">"); };
+  '[/void]'i   => { dstack_close_inline(INLINE_VOID, "</span>"); };
 
   color_typed => {
     if(options.allow_color) {
@@ -319,6 +323,8 @@ inline := |*
     }
     fgoto inline;
   };
+
+
 
   color_open => {
     if(options.allow_color) {
@@ -917,6 +923,7 @@ void StateMachine::dstack_rewind() {
     case INLINE_SUB: append("</sub>"); break;
     case INLINE_SUP: append("</sup>"); break;
     case INLINE_COLOR: append("</span>"); break;
+    case INLINE_VOID: append("</span>"); break;
 
     case BLOCK_TABLE: append_block("</table>"); break;
     case BLOCK_THEAD: append_block("</thead>"); break;
