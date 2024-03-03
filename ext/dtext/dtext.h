@@ -33,6 +33,7 @@ typedef enum element_t {
   INLINE_SUP,
   INLINE_SUB,
   INLINE_COLOR,
+  INLINE_VOID,
   INLINE_SPOILER,
 } element_t;
 
